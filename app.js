@@ -1,6 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import { check_connection } from './config/db.js';
+import { pool,check_connection } from './config/db.js';
 const app=express()
 dotenv.config();
 
@@ -11,6 +11,7 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.json({message:"working"})
 })
+
 
 
 app.listen(process.env.PORT,()=>{
